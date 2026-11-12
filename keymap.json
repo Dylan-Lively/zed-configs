@@ -1,0 +1,53 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Show/hide areas, left to right across the screen
+      "ctrl-alt-7": "multi_workspace::ToggleWorkspaceSidebar", // thread sidebar
+      "ctrl-alt-8": "workspace::ToggleLeftDock", // left dock
+      "ctrl-alt-9": "workspace::ToggleBottomDock", // bottom dock
+      "ctrl-alt-0": "workspace::ToggleRightDock", // right dock (agent)
+
+      // Focus (panels use Zed's built-in ctrl-shift keys)
+      "ctrl-shift-j": "multi_workspace::FocusWorkspaceSidebar", // thread/project sidebar
+      "ctrl-shift-k": "workspace::FocusCenterPane", // center editor
+      "ctrl-shift-q": "terminal_panel::ToggleFocus", // terminal
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-alt-j": "multi_workspace::ToggleWorkspaceSidebar", // now ctrl-alt-7
+      "ctrl-b": "workspace::ToggleLeftDock", // now ctrl-alt-8
+      "ctrl-j": "workspace::ToggleBottomDock", // now ctrl-alt-9
+      "ctrl-alt-b": "workspace::ToggleRightDock", // now ctrl-alt-0
+      "ctrl-alt-;": "multi_workspace::FocusWorkspaceSidebar", // now ctrl-shift-j
+      "ctrl-`": "terminal_panel::Toggle", // now ctrl-shift-q
+    },
+  },
+  {
+    // Zed's Editor context binds ctrl-alt-up/down to add-cursor, which ties with the
+    // agent scroll bindings and wins. Helix has its own multi-cursor (C / alt-C).
+    "context": "AcpThread > Editor",
+    "bindings": {
+      "ctrl-alt-up": "agent::ScrollOutputLineUp",
+      "ctrl-alt-down": "agent::ScrollOutputLineDown",
+    },
+  },
+  {
+    // Free these up so the Workspace bindings above also work inside the editor.
+    // Helix covers both: `J` joins lines, `x` then `d` deletes a line.
+    "context": "Editor",
+    "unbind": {
+      "ctrl-shift-j": "editor::JoinLines",
+      "ctrl-shift-k": "editor::DeleteLine",
+    },
+  },
+]
