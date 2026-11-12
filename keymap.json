@@ -42,6 +42,14 @@
     },
   },
   {
+    // Make y / p use the normal editor copy/paste (system clipboard) in Helix mode.
+    "context": "Editor && vim_mode == helix_normal && !menu",
+    "bindings": {
+      "y": "editor::Copy",
+      "p": "editor::Paste",
+    },
+  },
+  {
     // Free these up so the Workspace bindings above also work inside the editor.
     // Helix covers both: `J` joins lines, `x` then `d` deletes a line.
     "context": "Editor",
