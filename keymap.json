@@ -58,4 +58,10 @@
       "ctrl-shift-k": "editor::DeleteLine",
     },
   },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "ctrl-r": "vim::Redo"
+    }
+  }
 ]
