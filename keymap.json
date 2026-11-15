@@ -43,7 +43,8 @@
   },
   {
     // Make y / p use the normal editor copy/paste (system clipboard) in Helix mode.
-    "context": "Editor && vim_mode == helix_normal && !menu",
+    // `v` enters select mode, so cover both modes.
+    "context": "Editor && (vim_mode == helix_normal || vim_mode == helix_select) && !menu",
     "bindings": {
       "y": "editor::Copy",
       "p": "editor::Paste",
