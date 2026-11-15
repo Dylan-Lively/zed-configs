@@ -63,5 +63,11 @@
     "unbind": {
       "ctrl-r": "vim::Redo"
     }
-  }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "g t": "vim::GoToTab"
+    }
+  },
 ]
