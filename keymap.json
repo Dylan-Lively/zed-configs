@@ -71,4 +71,10 @@
       "g t": "vim::GoToTab"
     }
   },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == helix_normal) && !menu",
+    "bindings": {
+      "g f": "git::ViewFile"
+    }
+  },
 ]
