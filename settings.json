@@ -22,6 +22,7 @@
     "dock": "left"
   },
   "agent": {
+    "thinking_display": "always_collapsed",
     "terminal_init_command": "",
     "dock": "right",
     "favorite_models": [],

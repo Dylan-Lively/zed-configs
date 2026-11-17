@@ -72,9 +72,15 @@
     }
   },
   {
-    "context": "Editor && (vim_mode == normal || vim_mode == helix_normal) && !menu",
+    "context": "GitPanel && (ChangesList || HistoryList) && !GitBranchSelector && !GitRepositorySelector",
     "bindings": {
       "g f": "git::ViewFile"
     }
   },
+  {
+    "context": "GitPanel && (ChangesList || HistoryList) && !GitBranchSelector && !GitRepositorySelector",
+    "unbind": {
+      "g f": "menu::Confirm"
+    }
+  }
 ]
